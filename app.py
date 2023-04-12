@@ -14,7 +14,7 @@ def index():
     x = int(request.args.get('x', '0'))
     y = int(request.args.get('y', '0'))
     zoom = int(request.args.get('zoom', '120'))
-    processor = ImageProcess("/Users/mcong/360-webview-nojs/data/example.jpg")
+    processor = ImageProcess("./data/example.jpg")
     image = processor.get_image(zoom, x, y, 720, 1080)
     image = "data:image/png;base64, "+image
     return render_template('index.html', image=image, zoom=zoom, x=x, y=y, step=10)
