@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello World!</h1>
+    <h2>Welcome to FlaskApp!</h2>
+    <table>
+        <tr>
+            <td></td>
+            <td><a href="/?zoom={{zoom}}&x={{x}}&y={{y+step}}"><button>↑</button></a></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/?zoom={{zoom}}&x={{x-step}}&y={{y}}"><button>←</button></a></td>
+            <td><img src="{{ image }}"></img></td>
+            <td><a href="/?zoom={{zoom}}&x={{x+step}}&y={{y}}"><button>→</button></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="/?zoom={{zoom}}&x={{x}}&y={{y-step}}"><button>↓</button></a></td>
+            <td></td>
+        </tr>
+    </table>
+{% endblock %}

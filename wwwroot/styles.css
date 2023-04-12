@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+}
+
+.content {
+    max-width: 1024px;
+    margin:auto;
+}
+
+.content table {
+    text-align: center;
+}
+
+.content table img {
+    width: 100%;
+}
