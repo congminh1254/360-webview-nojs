@@ -6,18 +6,42 @@
     <table>
         <tr>
             <td></td>
-            <td><a href="/?zoom={{zoom}}&x={{x}}&y={{y+step}}"><button>↑</button></a></td>
+            <td><a href="/?img={{img}}&zoom={{zoom}}&x={{x}}&y={{y+step}}"><button>↑</button></a></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/?zoom={{zoom}}&x={{x-step}}&y={{y}}"><button>←</button></a></td>
+            <td><a href="/?img={{img}}&zoom={{zoom}}&x={{x-step}}&y={{y}}"><button>←</button></a></td>
             <td><img src="{{ image }}"></img></td>
-            <td><a href="/?zoom={{zoom}}&x={{x+step}}&y={{y}}"><button>→</button></a></td>
+            <td><a href="/?img={{img}}&zoom={{zoom}}&x={{x+step}}&y={{y}}"><button>→</button></a></td>
         </tr>
         <tr>
             <td></td>
-            <td><a href="/?zoom={{zoom}}&x={{x}}&y={{y-step}}"><button>↓</button></a></td>
+            <td><a href="/?img={{img}}&zoom={{zoom}}&x={{x}}&y={{y-step}}"><button>↓</button></a></td>
             <td></td>
         </tr>
+    </table>
+    <table class="map-table">
+        <tbody>
+            {% for row in maps %}
+                <tr>
+                    {% for col in row %}
+                        <td>
+                            {% if col %}
+                                <a 
+                                {% if col[0] == img %}
+                                    style="color: red"
+                                {% else %}
+                                    style="color: blue"
+                                {% endif %}
+                                    href="/?img={{col[0]}}&x={{x}}&y={{y}}"
+                                >•</a>
+                            {% else %}
+                                
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}
