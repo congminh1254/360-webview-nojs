@@ -13,6 +13,9 @@ app.config['FLASK_APP'] = get_configuration('flask_app')
 app.config['FLASK_ENV'] = get_configuration('flask_env')
 
 img_folder = 'data/img'
+if (path.exists(img_folder) == False):
+    raise Exception('No image folder found')
+
 map_file = 'data/points.json'
 if (path.exists(map_file) == False):
     generate_map('data')
