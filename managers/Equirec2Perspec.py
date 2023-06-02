@@ -1,3 +1,11 @@
+##############################################################################################################
+# Copyright (c) 2021 Fu-En Wang
+# Licensed under the MIT License.
+# Please refer to the LICENSE file in the project root for license details.
+#
+# Original source: https://github.com/fuenwang/Equirec2Perspec
+##############################################################################################################
+
 import os
 import sys
 import cv2
