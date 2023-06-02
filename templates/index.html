@@ -21,8 +21,8 @@
         </tr>
     </table>
     <table>
-        <td><a href="/?img={{img}}&zoom={{zoom-10}}&x={{x}}&y={{y}}"><button class="btn-hor">+</button></a></td>
-        <td><a href="/?img={{img}}&zoom={{zoom+10}}&x={{x}}&y={{y}}"><button class="btn-hor">-</button></a></td>
+        <td><a href="/?img={{img}}&zoom={{zoom-10}}&x={{x}}&y={{y}}"><button class="btn-zoom">+</button></a></td>
+        <td><a href="/?img={{img}}&zoom={{zoom+10}}&x={{x}}&y={{y}}"><button class="btn-zoom">-</button></a></td>
         <table class="map-table">
             <tbody>
                 {% for row in maps %}
@@ -30,14 +30,16 @@
                         {% for col in row %}
                             <td>
                                 {% if col %}
-                                    <a 
                                     {% if col[0] == img %}
-                                        style="color: red"
+                                        <style>
+                                            .dir {
+                                                transform: rotate(45deg); /*TODO: make the arrow rotate based on the x variable */
+                                            }
+                                        </style>
+                                        <a class="dir" style="color: red">↑</a>
                                     {% else %}
-                                        style="color: blue"
+                                        <a style="color: blue" href="/?img={{col[0]}}&zoom={{zoom}}&x={{x}}&y={{y}}">•</a>
                                     {% endif %}
-                                        href="/?img={{col[0]}}&zoom={{zoom}}&x={{x}}&y={{y}}"
-                                    >•</a>
                                 {% else %}
                                     
                                 {% endif %}
