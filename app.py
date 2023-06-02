@@ -32,7 +32,7 @@ def index():
     zoom = int(request.args.get('zoom', '120'))
     processor = ImageProcess(f'{img_folder}/'+img)
     image = processor.get_image(zoom, x, y, 720, 1080)
-    image = "data:image/png;base64, "+image
+    image = "data:image/jpeg;base64, "+image
     maps = json.load(open(map_file))
     for i in range(len(maps)):
         for j in range(len(maps[i])):
