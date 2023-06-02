@@ -20,28 +20,32 @@
             <td></td>
         </tr>
     </table>
-    <table class="map-table">
-        <tbody>
-            {% for row in maps %}
-                <tr>
-                    {% for col in row %}
-                        <td>
-                            {% if col %}
-                                <a 
-                                {% if col[0] == img %}
-                                    style="color: red"
+    <table>
+        <td><a href="/?img={{img}}&zoom={{zoom-10}}&x={{x}}&y={{y}}"><button class="btn-hor">+</button></a></td>
+        <td><a href="/?img={{img}}&zoom={{zoom+10}}&x={{x}}&y={{y}}"><button class="btn-hor">-</button></a></td>
+        <table class="map-table">
+            <tbody>
+                {% for row in maps %}
+                    <tr>
+                        {% for col in row %}
+                            <td>
+                                {% if col %}
+                                    <a 
+                                    {% if col[0] == img %}
+                                        style="color: red"
+                                    {% else %}
+                                        style="color: blue"
+                                    {% endif %}
+                                        href="/?img={{col[0]}}&zoom={{zoom}}&x={{x}}&y={{y}}"
+                                    >•</a>
                                 {% else %}
-                                    style="color: blue"
+                                    
                                 {% endif %}
-                                    href="/?img={{col[0]}}&x={{x}}&y={{y}}"
-                                >•</a>
-                            {% else %}
-                                
-                            {% endif %}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </table>
 {% endblock %}
