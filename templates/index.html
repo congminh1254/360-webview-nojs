@@ -37,10 +37,10 @@
                                     {% if col[0] == img %}
                                         <style>
                                             .dir {
-                                                transform: rotate(45deg); /*TODO: make the arrow rotate based on the x variable */
+                                                transform: rotate({{(x+180)%360}}deg) /*TODO: make the arrow rotate based on the x variable */
                                             }
                                         </style>
-                                        <a class="dir" style="color: red">↑</a>
+                                        <a class="dir" style="color: red; font-size: small;">↑</a>
                                     {% else %}
                                         <a style="color: blue" href="/?img={{col[0]}}&zoom={{zoom}}&x={{x}}&y={{y}}">•</a>
                                     {% endif %}
