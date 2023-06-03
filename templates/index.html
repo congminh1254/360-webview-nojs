@@ -5,7 +5,11 @@
     <h2>Welcome to FlaskApp!</h2>
     <table>
         <tr>
-            <td></td>
+            <td>
+                <a href="/?img={{img}}&zoom={{zoom}}&x=180&y={{y}}">
+                <img class="compass" src="/static/compass.png" style="transform: rotate({{(x+180)%360}}deg)"></img>
+                </a>
+            </td>
             <td><a href="/?img={{img}}&zoom={{zoom}}&x={{x}}&y={{y+step}}"><button class="btn-hor">↑</button></a></td>
             <td></td>
         </tr>
